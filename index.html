@@ -3,27 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>贪吃蛇游戏</title>
+    <title>扫雷游戏 - Minesweeper</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="game-container">
-        <h1>贪吃蛇游戏</h1>
-        <div class="score">得分: <span id="score">0</span></div>
-        <div class="high-score">最高分: <span id="high-score">0</span></div>
-        <canvas id="gameCanvas" width="400" height="400"></canvas>
-        <div class="controls">
-            <button id="startBtn">开始游戏</button>
-            <button id="pauseBtn">暂停</button>
-            <button id="resetBtn">重置</button>
-        </div>
-        <div class="instructions">
-            <h3>游戏说明：</h3>
-            <p>使用方向键控制蛇的移动</p>
-            <p>吃到食物可以增长身体和得分</p>
-            <p>不要撞到墙壁或自己的身体</p>
-        </div>
+    <div class="container">
+        <header>
+            <h1>🚩 扫雷游戏</h1>
+            <div class="controls">
+                <div class="game-info">
+                    <div class="info-item">
+                        <span class="label">雷数:</span>
+                        <span id="mine-count">10</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">时间:</span>
+                        <span id="timer">000</span>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button id="restart-btn" class="btn">🔄 重新开始</button>
+                    <select id="difficulty" class="select">
+                        <option value="easy">简单 (9×9, 10雷)</option>
+                        <option value="medium">中等 (16×16, 40雷)</option>
+                        <option value="hard">困难 (30×16, 99雷)</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+        
+        <main>
+            <div id="game-board" class="game-board"></div>
+            <div id="game-status" class="game-status"></div>
+        </main>
     </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
